@@ -32,6 +32,19 @@ const gameboard=(()=>{
         [" "," "," "]
         ];
     
+
+    function loadBoard(){
+        const virtBoard=document.querySelectorAll(".square");
+        /*virtBoard.addEventListener("click",function(e){
+             console.log(e.target.id);
+        
+        })*/
+       const flatBoard=board.flat();
+       for(let i=0;i<9;i++){
+        virtBoard[i].textContent=flatBoard[i];
+       }
+    }
+
     const makeMove=function(usrColumn,usrRow, usrMarker){
         if(board[usrRow][usrColumn]==" "){
             board[usrRow][usrColumn]=usrMarker;
@@ -75,14 +88,13 @@ const gameboard=(()=>{
         }
             
     }
-    return {getWin,makeMove,getBoard}
+    return {loadBoard,getWin,makeMove,getBoard}
 })();
 
 const manager=(()=>{
     let curPlayerIndex=0;
     function getCurPlayer(){
         return curPlayerIndex;
-        //toggleCurPlayer();
     }
     
 
@@ -93,8 +105,14 @@ const manager=(()=>{
             curPlayerIndex=1;
         }
     }
+
+    
     return {getCurPlayer,toggleCurPlayer};
 })();
+
+
+
+
 
 
 players.createPlayer("Josh","O");
@@ -125,3 +143,4 @@ gameboard.makeMove( 2,2,players.getPlayerMarker(manager.getCurPlayer()));
 
 console.log(gameboard.getBoard());
 console.log(gameboard.getWin());
+gameboard.loadBoard();
