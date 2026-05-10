@@ -3,10 +3,52 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Tic Tac Toe Game</title>
     <link rel="stylesheet" href="custom.css">
 </head>
 <body>
+ <div class="page">
+        
+     <div class="header">
+    
+         <label for="player1" class="show">Player1 name: </label>
+         <input type="text" name="inplayer1" id="inplayer1"  value="Player1" disabled>
+         <select name="usrmarker1" id="splayer1" disabled>
+             <option value="X" selected>X</option>
+             <option value="O" >O</option>
+         </select>
+          <label for="player1" class="show">Player2 name: </label>
+         <input type="text" name="inplayer2" id="inplayer2"  value="Player2" disabled>
+         <select name="usrmarker2" id="splayer2" disabled>
+             <option value="X" >X</option>
+             <option value="O" selected>O</option>
+         </select>
+         <button id="btnedit">Edit</button>
+     </div>
+      
+     <div class="content">
+     <div class="container">
+         <div id="00" class="square"></div>
+         <div id="01" class="square"></div>
+         <div id="02" class="square"></div>
+         <div id="10" class="square"></div>
+         <div id="11" class="square"></div>
+         <div id="12" class="square"></div>
+         <div id="20" class="square"></div>
+         <div id="21" class="square"></div>
+         <div id="22" class="square"></div>
+     </div>
+     <div class="menu">
+         <button id="btnstart">
+             Start
+         </button>
+         <div class="display">
+         </div>
+     </div>
+     </div>
+ </div>
+
+
 <script src="custom.js"></script>
 </body>
 </html>
